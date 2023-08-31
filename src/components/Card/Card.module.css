@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDxUXluBeIaKdtWJFZzs8RvbrlQE9ijPgfRw&usqp=CAU");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 550px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgba(5, 82, 6, 0.406);
+/*     backdrop-filter: blur(30px); */
+}
+
+.imgButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.imgButton img{
+    border-radius: 50%;
+    transform: translateX(-20px);
+/*     transform: translate(-2.1rem, -2ex); */
+}
+
+.imgButton button{
+    width: 30px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heartId{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.heart{
+    cursor: pointer;
+    font-size: x-large;
+    background-color: transparent;
+    border: none;
+    transition: 0.4s;
+    margin: 3px;
+}
+
+.heart:active {
+    transform: scale(1.1);
+}
+
+.close{
+    cursor: pointer;
+    font-size: x-large;
+    background-color: transparent;
+    border: none;
+    transition: 0.4s;
+    margin: 3px;
+}

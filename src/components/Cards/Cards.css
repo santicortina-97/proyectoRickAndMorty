@@ -1,9 +1,14 @@
 .tarjeta{
-    width: 85%;
+/*     width: 85%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
-    grid-gap: 20px;
+    grid-gap: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .card{

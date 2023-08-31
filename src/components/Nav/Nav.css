@@ -1,11 +1,9 @@
 .nav{
-    /* background-color: #aa94b5c9; */
     background-color: #a1aabf53;
     padding: 15px 20px;
     margin: 40px;
     border-radius: 5px;
     border: 1px s black;
-    /* box-shadow: 3px -1px 100px 4px rgba(135, 135, 135, 0.99); */
     box-shadow: 3px -1px 100px 4px rgba(26, 26, 26, 0.99);
     display: flex;
     justify-content: space-around;
@@ -57,7 +55,6 @@
     border: 2px solid rgb(50, 50, 50);
     border-bottom: 5px solid rgb(50, 50, 50);
     box-shadow: 0px 1px 6px 0px rgb(158, 129, 254);
-    /* transform: translate(0, -3px); */
     transition: 0.2s;
     transition-timing-function: linear;
 }
