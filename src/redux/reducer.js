@@ -52,6 +52,14 @@ export default function rootReducer(state = initialState, action){
 }
 
 
+//Caso getcharacter
+// case GET_CHARACTERS:
+//     return{
+//         ...state,
+//         characters:action.payload
+//     }
+
+
 
 
 

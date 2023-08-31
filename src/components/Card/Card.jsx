@@ -68,12 +68,12 @@ function Card(props) {
             <img src={character.image} alt={character.name} />
          </div>
          <div className={style.info}>
-            <Link to={`/Detail/${character.id}`}><h2>{/* Name:  */}{character.name}</h2></Link>
+            <Link to={`/Detail/${character.id}`} style={{textDecoration: "none"}}><h2>{/* Name:  */}{character.name}</h2></Link>
                <div className={style.data}>
-                  <h2>{/* Status:  */}{character.status === 'Alive' ? 'Alive' : character.status === "Dead" ? ' Dead ♰' : "Unknown"}</h2>
-                  <h2>Specie: {character.species}</h2>
-                  <h2>Gender: {character.gender}</h2>
-                  <p>Id: {character.id}</p>
+                  <h3>{/* Status:  */}{character.status === 'Alive' ? 'Alive' : character.status === "Dead" ? ' Dead ♰' : "Unknown"}</h3>
+{/*                   <h3>Specie: {character.species}</h3>
+                  <h3>Gender: {character.gender}</h3> */}
+                  <h3>Id: {character.id}</h3>
                </div>
          </div>
          <div className={style.heartId}>

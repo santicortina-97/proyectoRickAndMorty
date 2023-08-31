@@ -12,7 +12,7 @@
 
 .containerDiv1{
     display: flex;
-    gap: 10rem;
+    gap: 30rem;
     justify-content: space-between;
 }
 
@@ -39,7 +39,7 @@
 
 .boton{
     margin-top: 5px;
-    background-color: #e2d0f3;
+    background-color: rgb(199, 156, 242);
     border: 2px solid rgb(50, 50, 50);
     border-radius: 10px;
     padding: 10px;
@@ -55,18 +55,33 @@
     box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
 }
 
+.botonCard{
+    cursor: pointer;
+    font-size: 15px;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 0.7rem;
+    background-color: rgb(199, 156, 242);
+    border: 2px solid rgb(50, 50, 50);
+    border-bottom: 5px solid rgb(50, 50, 50);
+    box-shadow: 0px 1px 6px 0px rgb(158, 129, 254);
+    transition: 0.2s;
+    transition-timing-function: linear;
+}
 
+.botonCard:active{
+    transform: translate(0, 0);
+    border-bottom: 2px solid rgb(50, 50, 50);
+}
 
-/* .dropdown{
-    display: inline-block;
-    position: relative;
-} */
 
 .dropdownContent{
     position: absolute;
     z-index: 1;
-    width: 80px;
-    background: white;
+    width: 70px;
+    padding: 5px;
+    background-color: #e2d0f3;
+    border-radius: 10px;
 }
 
 
@@ -76,5 +91,4 @@
     padding: 5px;
     text-decoration: none;
 }
-
 

@@ -5,12 +5,13 @@ import Cards from '../../components/Cards/Cards'
 import "./Favorite.css"
 
 const Favorites = (/* {favorites} */) => {
+    const dispatch = useDispatch();
+    //Recibe un callBack, el cual tiene al estado (reducer) y de ese estado nos quedamos con (en este caso myFavorites)
     const favorites = useSelector((state) => state.myFavorites)
     console.log(favorites)
 
     
     const [aux, setAux] = useState(false)
-    const dispatch = useDispatch();
 
     function handleOrder(e){
         dispatch(orderCards(e.target.value))
