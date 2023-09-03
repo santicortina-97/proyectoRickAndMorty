@@ -38,7 +38,7 @@
 
 .containerDetail{
     border: 2px solid rgb(117, 90, 90);
-    border-radius: 15px;
+    border-radius: 5%;
     background-color: #f3ccffaa;
     backdrop-filter: blur(10px);
     padding: 5px;
@@ -53,8 +53,7 @@
 
 .containerText{
 /*     text-align: left; */
-text-align: center;
-    font-size: large;
+    text-align: center;
 }
 
 .image{
@@ -65,7 +64,7 @@ text-align: center;
 }
 
 .image img{
-    border-radius: 10%;
+    border-radius: 20%;
     border: 2px solid black;
     box-shadow: 0px 0px 20px 0px rgb(255, 255, 255);
 }
@@ -82,4 +81,5 @@ text-align: center;
 .id{
     text-align: right;
     padding-right: 10px;
+    font-weight: bold;
 }
