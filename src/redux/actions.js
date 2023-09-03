@@ -35,9 +35,9 @@ export function orderCards(order){
 //import axios from "axios"
 
 // export const getCharacter = () =>{
-//     //Le aclaramos a la funcion que es asincrona y recibe dispatch
+//?     Le aclaramos a la funcion que es asincrona y recibe dispatch
 //     return async function(dispatch){
-//                         //Espera a la consukta (pasamos el url de la API)
+//?                          Espera a la consukta (pasamos el url de la API)
 //         let response = await axios.get(`https://rym2-production.up.railway.app/api/character/${id}?key=henrym-santicortina-97`)
 //         return dispatchEvent({type:GET_CHARACTERS, payload: Response.data})
 //     }

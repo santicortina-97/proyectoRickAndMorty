@@ -68,6 +68,7 @@ export const App = () => {
             }
         }
 
+
         //Buscamos un personaje random
         function randomHandler(){
 

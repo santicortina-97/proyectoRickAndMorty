@@ -1,24 +1,27 @@
 .detailConteiner{
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-/*     background-image: url("https://w.forfun.com/fetch/03/03fdb791c0c8753db54348da091ba79b.jpeg");
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
 }
 
 
 .detail{
     border: 2px solid rgb(117, 90, 90);
     border-radius: 15px;
-    background-color: #ffffff05;
+    background-color: #f3ccffaa;
     backdrop-filter: blur(10px);
     color: white;
     padding: 20px;
+}
+
+.headCard{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+/*   gap: 50px; */
+}
+.headCard h2{
+  color: black;
 }
 
 .detail img{
