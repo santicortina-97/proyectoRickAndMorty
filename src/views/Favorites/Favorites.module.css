@@ -1,0 +1,23 @@
+.containerOption{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.containerOption select{
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 100px;
+    border:2px solid rgba(0,0,0,0.2);
+    transition: all 0.25s ease;
+    background: #f0f0f0;
+    font-size: medium;
+}
+
+.containerOption select:hover{
+    background: #e2d0f3;
+}
+
+.container h1{
+    text-align: center;
+}

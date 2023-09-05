@@ -1,0 +1,92 @@
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    gap: 10px;
+    background-color: rgba(30, 99, 47, 0.343);
+    border: 1px solid black;
+    backdrop-filter: blur(10px);
+    padding: 2.5em;
+    border-radius: 25px;
+    transition: .4s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 2px;
+}
+
+.form img{
+    width: 300px;
+}
+.form label{
+    color: white;
+    font-size: large;
+}
+
+.input{
+    font-size: medium;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    outline: none;
+    padding: 0.7em;
+    transition: .4s ease-in-out;
+}
+
+.input:focus {
+    background: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+}
+
+.btn {
+    font-size: medium;
+    cursor: pointer;
+    margin-top: 2em;
+    align-self: center;
+    padding: 0.7em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    transition: .4s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px;
+}
+
+.btn:active{
+    transition: 0.3s;
+    transform: scale(0.93);
+}
+
+.error{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.gif{
+    width:400px;
+        border-radius: 40%; 
+        animation-name: fadeIn;
+        animation-duration: 1.2s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+}
+
+@keyframes fadeIn {
+			
+    0% {
+        filter:blur(12px);
+        opacity:0;
+    }
+    100% {
+        filter:blur(0);
+        opacity:1;
+    }
+}

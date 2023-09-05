@@ -25,6 +25,9 @@ export const App = () => {
     let EMAIL = "santicortina@hotmail.com";
     let PASSWORD = "santi97";
 
+
+
+
     function login(userData){
         if (userData.password === PASSWORD && userData.email === EMAIL) {
             setAccess(true);
@@ -69,7 +72,7 @@ export const App = () => {
         }
 
 
-        //Buscamos un personaje random
+        //!Buscamos un personaje random
         function randomHandler(){
 
             let memoria = []

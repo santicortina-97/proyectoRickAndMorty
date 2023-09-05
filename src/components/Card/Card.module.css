@@ -69,3 +69,8 @@ background-color: #f3ccff66;
     transition: 0.4s;
     margin: 3px;
 }
+
+.close:hover{
+    transition: 0.5s;
+    transform: scale(0.8);
+}

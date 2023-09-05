@@ -1,7 +1,8 @@
 import React from 'react'
 import { validation } from '../../utils/validation'
 import { useState, useEffect } from 'react'
-import "./Form.css"
+import style from "./Form.module.css"
+/* import "./Form.css" */
 
 
 
@@ -82,7 +83,7 @@ const Form = ({login}) => {
 
 /* <img src="https://64.media.tumblr.com/c632c64e01e2098d596854fff0739a2b/tumblr_pdbo3togim1xd0gvgo1_1280.gif" alt="Loading GIF" className='gif'/> */
     return (
-        <div className='contenedorForm'>
+/*         <div className='contenedorForm'>
             {showGif ? (
                 <img src="https://media.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif" alt="Loading GIF" className='gif'/>
                 
@@ -98,7 +99,24 @@ const Form = ({login}) => {
                     <button className="btn" onClick={handleSubmit}>Submit</button>
                 </form>
             )}
-        </div>
+        </div> */
+            <div className={style.container}>
+                {showGif ? (
+                    <img src="https://media.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif" alt="Loading GIF" className={style.gif}/>
+                    
+                ) : (
+                    <form className={style.form} onSubmit={handleSubmit}>
+                        <img src="https://occ-0-2433-990.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABdlsO0LP022AtLRcPlik-5uWGqVS90oIr1Wy70ULe7-qyaW-Y3a9zUgndw6Q6KuHX2gH_Vd3Nxnl6EOU38_ep9ApNbNfn2Krr6hLj6fhs_eZ.png?r=976" alt="" />
+                        <label htmlFor="">Email:</label>
+                        <input type="text" className={style.input} name='email' value={userData.email} onChange={handleChange} placeholder='Email'/>
+                        {errors.email && <span className={style.error}>{errors.email}</span>}
+                        <label htmlFor="">Password</label>
+                        <input type="text" className={style.input} name='password' value={userData.password} onChange={handleChange} placeholder='Password'/>
+                        {errors.password && <span className={style.error}>{errors.password}</span>}
+                        <button className={style.btn} onClick={handleSubmit}>Submit</button>
+                    </form>
+                )}
+            </div>
     )
 }
 

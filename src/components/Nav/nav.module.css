@@ -6,7 +6,7 @@
     border: 1px s black;
     box-shadow: 3px -1px 100px 4px rgba(26, 26, 26, 0.99);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     transition: 1s ease all;
 }
 

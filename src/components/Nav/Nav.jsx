@@ -28,21 +28,6 @@ const Nav = (props) => {
     }
 
 
-/*     return (
-        <div className='nav'>
-            <div className='link'>
-                <Link to="/"><button className='botonHome'>Log Out</button></Link>
-                <Link to="/home"><button className='botonHome'>Home</button></Link>
-                <Link to="/about"><button className='botonAbout'>About</button></Link>
-                <Link to="/favorites"><button className='botonAbout'>Favorites</button></Link>
-            </div>
-            <div className='navSearch'>
-                <SearchBar onSearch={onSearch} />
-                <button onClick={randomize} className="button">Random</button>
-                <button  className="button" onClick={clear}>Clear</button>
-            </div>
-        </div>
-    ) */
     return (
         <div className={style.container}>
             <div className={style.containerDiv1}>
@@ -59,7 +44,7 @@ const Nav = (props) => {
                 </div>
             </div>
             <div className={style.containerDiv2}>
-                <SearchBar onSearch={onSearch} />
+                <SearchBar onSearch={onSearch}/>
                 <button onClick={randomize} className={style.botonCard}>Random</button>
                 <button onClick={clear} className={style.botonCard}>Clear</button>
             </div>
