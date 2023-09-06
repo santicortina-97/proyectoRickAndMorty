@@ -48,6 +48,14 @@ export const App = () => {
     //* Usar esta direccion:
     // https://rym2-production.up.railway.app/api/character/${id}?key=henrym-santicortina-97
 
+    //! 2 personajes al inicio
+    useEffect(() =>{
+        axios.get(`https://rym2-production.up.railway.app/api/character/?key=henrym-santicortina-97`)
+        .then(({data}) =>{
+            const firstThreeCharacters = data.results.slice(0,2)
+            setCharacters(firstThreeCharacters)
+        })
+    }, [])
 
     function onSearch(id) {
             let memoria = [];
@@ -58,7 +66,7 @@ export const App = () => {
 
             if (!memoria.includes(id)) {
                 if (!characters.some(character => character.id == id)) {
-                    axios(`https://rym2-production.up.railway.app/api/character/${id}?key=henrym-santicortina-97`)
+                    axios(`http://localhost:3001/rickandmorty/character/${id}`)
                     .then(({ data }) => {
                         if (data.name) {
                             setCharacters((oldChars) => [...oldChars, data]);
@@ -76,12 +84,13 @@ export const App = () => {
         function randomHandler(){
 
             let memoria = []
-
+                                        //*6 (en caso de qos personajes)
             let randomId = (Math.random()*826).toFixed(); //=> Generamos un id random que este dentro de los 826 => toFixed se queda con la parte positiva
             randomId = Number(randomId); // => toFixed devuelve un String, aca lo pasamos a number
 
             if(!memoria.includes(randomId)){
                 memoria.push(randomId)
+                        //`http://localhost:3001/rickandmorty/character/${randomId}`
                 axios(`https://rym2-production.up.railway.app/api/character/${randomId}?key=henrym-santicortina-97`).then(({ data }) => {
                     if (data.name) {
                         setCharacters((oldChars) => [...oldChars, data]);

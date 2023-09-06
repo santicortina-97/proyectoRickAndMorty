@@ -29,7 +29,7 @@ const Detail = () => {
 
 
   useEffect(() => {
-    axios(`https://rym2-production.up.railway.app/api/character/${id}?key=henrym-santicortina-97`).then(({ data }) => {
+    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
       if (data.name) {
           setCharacter(data);
         } else {

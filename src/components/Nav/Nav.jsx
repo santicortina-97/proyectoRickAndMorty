@@ -43,11 +43,13 @@ const Nav = (props) => {
                     )}
                 </div>
             </div>
+                {location.pathname === "/home" && (
             <div className={style.containerDiv2}>
                 <SearchBar onSearch={onSearch}/>
                 <button onClick={randomize} className={style.botonCard}>Random</button>
                 <button onClick={clear} className={style.botonCard}>Clear</button>
             </div>
+                )}
         </div>
     )
 }
