@@ -75,7 +75,7 @@ const Detail = () => {
         </div>
         <div className={style.id}>
           <p>{character.status === 'Alive' ? '🟢 Alive' : character.status === "Dead" ? '🔴 Dead' : "Unknown"}</p>
-          <p>ID: {character.id}</p>
+          <p>ID: {id}</p>
         </div>
       </div>
   </div>

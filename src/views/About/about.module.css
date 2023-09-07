@@ -1,0 +1,18 @@
+.button{
+    display: flex;
+}
+
+.button button{
+    cursor: pointer;
+    font-size: x-large;
+    background-color: transparent;
+    border: 1px solid black;
+    transition: 0.4s;
+    margin-left: 30px;
+    color: black;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+}

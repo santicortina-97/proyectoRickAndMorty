@@ -27,9 +27,8 @@ const Nav = (props) => {
         return null
     }
 
-
     return (
-        <div className={style.container}>
+/*         <div className={style.container}>
             <div className={style.containerDiv1}>
                 <NavLink to="/" ><button className={style.boton}>Log Out</button></NavLink>
                 <div className={style.dropdown}>
@@ -50,7 +49,72 @@ const Nav = (props) => {
                 <button onClick={clear} className={style.botonCard}>Clear</button>
             </div>
                 )}
+        </div> */
+
+//         <div className={style.container}>
+// {/*         <div className={style.containerDiv1}> */}
+//             <div className={style.logOut}>
+//             <NavLink to="/" ><button className={style.boton}>Log Out</button></NavLink>
+//             </div>
+            
+//             <div className={style.dropdown}>
+//                 <button onClick={menuDesplegable} className={style.boton}>Menu</button>
+//                 {menu && (
+//                 <div className={style.dropdownContent}>
+//                     <NavLink to="/home" style={{textDecoration: "none"}} onClick={plegarMenu}><p>Home</p></NavLink>
+//                     <NavLink to="/about" style={{textDecoration: "none"}} onClick={plegarMenu}><p>About</p></NavLink>
+//                     <NavLink to="/favorites" style={{textDecoration: "none"}} onClick={plegarMenu}><p>Favorites</p></NavLink>
+//                 </div>
+//                 )}
+//             </div>
+// {/*         </div> */}
+//             {location.pathname === "/home" && (
+//         <div className={style.containerDiv2}>
+//             <SearchBar onSearch={onSearch}/>
+//             <button onClick={randomize} className={style.botonCard}>Random</button>
+//             <button onClick={clear} className={style.botonCard}>Clear</button>
+//         </div>
+//             )}
+//     </div>
+
+
+
+
+
+
+
+
+
+
+        <div className={style.container}>
+{/*         <div className={style.containerDiv1}> */}
+            <div className={style.logOut}>
+            <NavLink to="/" ><button className={style.boton}>Log Out</button></NavLink>
+            </div>
+            
+            <div className={style.dropdown}>
+                <button onClick={menuDesplegable} className={style.boton}>Menu</button>
+                {menu && (
+                <div className={style.dropdownContent}>
+                    <NavLink to="/home" style={{textDecoration: "none"}} onClick={plegarMenu}><p>Home</p></NavLink>
+                    <NavLink to="/about" style={{textDecoration: "none"}} onClick={plegarMenu}><p>About</p></NavLink>
+                    <NavLink to="/favorites" style={{textDecoration: "none"}} onClick={plegarMenu}><p>Favorites</p></NavLink>
+                </div>
+                )}
+            </div>
+{/*         </div> */}
+            {location.pathname === "/home" && (
+        <div className={style.containerDiv2}>
+            <SearchBar onSearch={onSearch}/>
+            <button onClick={randomize} className={style.botonCard}>Random</button>
+            <button onClick={clear} className={style.botonCard}>Clear</button>
         </div>
+            )}
+{/* {(location.pathname === "/about" || location.pathname === "/favorites") && (
+    <button>Back</button>
+)} */}
+
+    </div>
     )
 }
 

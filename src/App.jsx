@@ -90,8 +90,8 @@ export const App = () => {
 
             if(!memoria.includes(randomId)){
                 memoria.push(randomId)
-                        //`http://localhost:3001/rickandmorty/character/${randomId}`
-                axios(`https://rym2-production.up.railway.app/api/character/${randomId}?key=henrym-santicortina-97`).then(({ data }) => {
+                        //`https://rym2-production.up.railway.app/api/character/${randomId}?key=henrym-santicortina-97`
+                axios(`http://localhost:3001/rickandmorty/character/${randomId}`).then(({ data }) => {
                     if (data.name) {
                         setCharacters((oldChars) => [...oldChars, data]);
                     } else {
