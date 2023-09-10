@@ -22,18 +22,30 @@ export const App = () => {
 
     let navigate= useNavigate()
     const [access, setAccess] = useState(false)
-    let EMAIL = "santicortina@hotmail.com";
-    let PASSWORD = "santi97";
+/*     let EMAIL = "santicortina@hotmail.com";
+    let PASSWORD = "santi97"; */
 
 
 
-
-    function login(userData){
+//! Antigua
+/*     function login(userData){
         if (userData.password === PASSWORD && userData.email === EMAIL) {
             setAccess(true);
             navigate('/home');
         }
+    } */
+    function login(userData) {
+        const { email, password } = userData;
+        const URL = 'http://localhost:3001/rickandmorty/login/';
+        axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+            const { access } = data;
+            setAccess(data);
+            access && navigate('/home');
+        });
     }
+
+
+
     useEffect(() => {
         !access && navigate('/');
     }, [access]);
@@ -49,13 +61,13 @@ export const App = () => {
     // https://rym2-production.up.railway.app/api/character/${id}?key=henrym-santicortina-97
 
     //! 2 personajes al inicio
-    useEffect(() =>{
+/*     useEffect(() =>{
         axios.get(`https://rym2-production.up.railway.app/api/character/?key=henrym-santicortina-97`)
         .then(({data}) =>{
             const firstThreeCharacters = data.results.slice(0,2)
             setCharacters(firstThreeCharacters)
         })
-    }, [])
+    }, []) */
 
     function onSearch(id) {
             let memoria = [];

@@ -1,3 +1,15 @@
+.container{
+    margin: 70px auto auto 20px;
+}
+
+.back{
+    background: #8867ca;
+    font-size: x-large;
+    color: black;
+    cursor: pointer;
+}
+
+
 .containerOption{
     display: flex;
     justify-content: center;
@@ -20,4 +32,5 @@
 
 .container h1{
     text-align: center;
+    margin: 70px;
 }

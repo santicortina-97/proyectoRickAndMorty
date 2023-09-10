@@ -28,6 +28,7 @@ const Detail = () => {
 
 
 
+
   useEffect(() => {
     axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
       if (data.name) {

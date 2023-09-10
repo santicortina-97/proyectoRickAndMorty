@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { filterCards, orderCards } from '../../redux/actions'
 import Cards from '../../components/Cards/Cards'
 import style from "./Favorites.module.css"
@@ -31,6 +32,7 @@ const Favorites = (/* {favorites} */) => {
     return (
 
         <div className={style.container}>
+            <Link to="/home"><button className={style.back}>Back</button></Link>
             <div className={style.containerOption}>
             <select name="" id="" onChange={handleOrder}>
                 <option value="Ascendente">Ascendente</option>
