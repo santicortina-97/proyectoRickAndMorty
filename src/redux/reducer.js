@@ -18,7 +18,8 @@ export default function rootReducer(state = initialState, action){
             } */
             case ADD_FAV:
                 return { 
-                    ...state, myFavorites: action.payload, 
+                    ...state, 
+                    myFavorites: action.payload, 
                     allCharacters: action.payload 
                 };
 
@@ -29,7 +30,8 @@ export default function rootReducer(state = initialState, action){
             } */
             return { 
                 ...state, 
-                myFavorites: action.payload 
+                myFavorites: action.payload,
+                allCharacters: action.payload  
             };
         case FILTER:
             //Opcion para mostrar a todos

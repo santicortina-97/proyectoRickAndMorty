@@ -34,7 +34,7 @@ export const App = () => {
             navigate('/home');
         }
     } */
-    function login(userData) {
+/*     function login(userData) {
         const { email, password } = userData;
         const URL = 'http://localhost:3001/rickandmorty/login/';
         axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
@@ -42,6 +42,18 @@ export const App = () => {
             setAccess(data);
             access && navigate('/home');
         });
+    } */
+    async function login(userData){
+        try {
+            const {email, password} = userData;
+            const URL = 'http://localhost:3001/rickandmorty/login/';
+            const{data} = await axios(URL + `?email=${email}&password=${password}`)
+            const { access } = data
+            setAccess(data);
+            access && navigate("/home")
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 
@@ -52,7 +64,6 @@ export const App = () => {
 
     function logOut(){
         setAccess(false)
-        useNavigate("/")
     }
 
     const [characters, setCharacters] = useState([])
@@ -69,7 +80,7 @@ export const App = () => {
         })
     }, []) */
 
-    function onSearch(id) {
+/*     function onSearch(id) {
             let memoria = [];
 
             if (id >= 827 || id <= 0 || isNaN(id)) {
@@ -89,14 +100,35 @@ export const App = () => {
                 alert("Ese Personaje ya esta incluido")
             }
             }
+        } */
+        async function onSearch(id){
+            try {
+            let memoria = [];
+            if (id >= 827 || id <= 0 || isNaN(id)) {
+                return window.alert('¡No hay personajes con este ID!');
+            }
+            if(!memoria.includes(id)){
+                if (!characters.some(character => character.id == id)) {
+                    const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+                    if(data.name){
+                        setCharacters((oldChars) => [...oldChars, data]);
+                        memoria.push(id);
+                        }
+                    }else{
+                        alert("Ese Personaje ya esta incluido")
+                    }
+                }
+            }catch (error) {
+                console.log(error)
+            }
         }
 
 
         //!Buscamos un personaje random
-        function randomHandler(){
+/*         function randomHandler(){
 
             let memoria = []
-                                        //*6 (en caso de qos personajes)
+                                        //*6 (en caso de dos personajes)
             let randomId = (Math.random()*826).toFixed(); //=> Generamos un id random que este dentro de los 826 => toFixed se queda con la parte positiva
             randomId = Number(randomId); // => toFixed devuelve un String, aca lo pasamos a number
 
@@ -110,6 +142,24 @@ export const App = () => {
                         window.alert('¡No hay personajes con este ID!');
                     }
                     });
+            }
+        } */
+        async function randomHandler(){
+            try {
+                let memoria = [];
+                let randomId = (Math.random()*826).toFixed(); //=> Generamos un id random que este dentro de los 826 => toFixed se queda con la parte positiva
+                randomId = Number(randomId); // => toFixed devuelve un String, aca lo pasamos a number
+                if(!memoria.includes(randomId)){
+                    memoria.push(randomId)
+                    const {data} = await axios(`http://localhost:3001/rickandmorty/character/${randomId}`)
+                    if(data.name){
+                        setCharacters((oldChars)=> [...oldChars, data])
+                    }else {
+                        window.alert('¡No hay personajes con este ID!');
+                    }
+                }
+            } catch (error) {
+                console.log(error)
             }
         }
 
@@ -127,7 +177,7 @@ export const App = () => {
 
     return (
         <div className='App'>
-            <Nav onSearch={onSearch} randomize={randomHandler} clear={clear}/>
+            <Nav onSearch={onSearch} randomize={randomHandler} clear={clear} logOut={logOut}/>
             <Routes>
                 <Route path='/' element={<Form login={login}/>}/>
                 <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>

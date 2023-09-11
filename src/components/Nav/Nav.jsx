@@ -10,9 +10,9 @@ import style from "./nav.module.css"
 
 
 const Nav = (props) => {
-    const {onSearch, randomize, clear} = props
-    const {id} = useParams()
-    console.log(id)
+    const {onSearch, randomize, clear,logOut} = props
+/*     const {id} = useParams()
+    console.log(id) */
     //Menu
     const [menu, setMenu] = useState(false)
 
@@ -34,7 +34,7 @@ const Nav = (props) => {
         <div className={style.container}>
 {/*         <div className={style.containerDiv1}> */}
             <div className={style.logOut}>
-            <NavLink to={"/"} ><button className={style.boton}>Log Out</button></NavLink>
+            <button onClick={logOut} className={style.boton}>Log Out</button>
             </div>
             
             <div className={style.dropdown}>
