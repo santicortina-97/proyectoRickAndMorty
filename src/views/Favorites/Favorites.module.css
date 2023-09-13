@@ -1,12 +1,12 @@
-.container{
+/* .container{
     margin: 70px auto auto 20px;
-}
+} */
 
 .back{
-    margin-left: 30px;
+    margin: 30px auto auto 50px;
+/*     margin-left: 30px; */
+    border-radius: 10px;    
     background: #8867ca;
-    font-size: x-large;
-    color: black;
     cursor: pointer;
 }
 
@@ -31,7 +31,8 @@
     background: #e2d0f3;
 }
 
-.container h1{
+.title{
     text-align: center;
-    margin: 70px;
+    font-size: xx-large;
+    margin: 50px;
 }

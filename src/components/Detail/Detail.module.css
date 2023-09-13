@@ -1,11 +1,12 @@
 .button{
-    background: #af97bd;
+    background: #7BA4AC;
     padding: 5px;
-    margin: 30px;
-    font-size: x-large;
-    color: black;
+    margin: 50px auto auto 50px;
     cursor: pointer;
+    border-radius: 10px;
 }
+
+
 .container{
     display: flex;
     justify-content: center;

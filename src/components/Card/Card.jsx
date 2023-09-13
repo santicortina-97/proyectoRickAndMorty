@@ -12,7 +12,6 @@ import style from "./Card.module.css"
 
 function Card(props) {
    const {character, onClose, addFav, removeFav, favorites} = props
-   
    const [isfav, setIsfav] = useState(false)
    const location = useLocation()
 
