@@ -9,7 +9,11 @@ const About = () => {
             <Link to={"/home"}><button>⬅Back</button></Link>
             </div>
             <div className={style.about}>
-            <h1>About</h1>
+                <h1>About</h1>
+            <div className={style.card}>
+            <img src="https://images7.alphacoders.com/633/633262.png" alt="" />
+            <h2>Santiago Manuel Cortina</h2>
+            </div>
             </div>
         </div>
     )

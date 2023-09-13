@@ -47,7 +47,7 @@ export const App = () => {
         try {
             const {email, password} = userData;
             const URL = 'http://localhost:3001/rickandmorty/login/';
-            const{data} = await axios(URL + `?email=${email}&password=${password}`)
+            const {data} = await axios(URL + `?email=${email}&password=${password}`)
             const { access } = data
             setAccess(data);
             access && navigate("/home")
@@ -55,6 +55,7 @@ export const App = () => {
             console.log(error)
         }
     }
+
 
 
 
@@ -79,6 +80,16 @@ export const App = () => {
             setCharacters(firstThreeCharacters)
         })
     }, []) */
+    useEffect(() =>{
+        const initialCharacters = async () =>{
+            const {data} = await axios.get(`https://rickandmortyapi.com/api/character/`)
+            if(data){
+                const firstThreeCharacters = data.results.slice(0,2)
+                setCharacters(firstThreeCharacters)
+            }
+        } 
+        initialCharacters()
+    }, [])
 
 /*     function onSearch(id) {
             let memoria = [];
@@ -105,7 +116,7 @@ export const App = () => {
             try {
             let memoria = [];
             if (id >= 827 || id <= 0 || isNaN(id)) {
-                return window.alert('¡No hay personajes con este ID!');
+                throw new Error('¡No hay personajes con este ID!');
             }
             if(!memoria.includes(id)){
                 if (!characters.some(character => character.id == id)) {
@@ -115,11 +126,11 @@ export const App = () => {
                         memoria.push(id);
                         }
                     }else{
-                        alert("Ese Personaje ya esta incluido")
+                        throw new Error("Ese Personaje ya esta incluido")
                     }
                 }
             }catch (error) {
-                console.log(error)
+                alert(error)
             }
         }
 

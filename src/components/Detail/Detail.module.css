@@ -1,3 +1,11 @@
+.button{
+    background: #af97bd;
+    padding: 5px;
+    margin: 30px;
+    font-size: x-large;
+    color: black;
+    cursor: pointer;
+}
 .container{
     display: flex;
     justify-content: center;

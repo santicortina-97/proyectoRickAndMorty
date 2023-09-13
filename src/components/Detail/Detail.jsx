@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 /* import "./Detail.css" */
 import style from "./Detail.module.css"
 
@@ -57,7 +58,8 @@ const Detail = () => {
         <h2>{character.id}</h2>
       </div>
     </div> */
-
+    <div className={style.card}>
+      <Link to="/home"><button className={style.button}>Back</button></Link>
     <div className={style.container}>
       <div className={style.containerDetail}>
         <div className={style.containerHead}>
@@ -69,7 +71,7 @@ const Detail = () => {
               <div className={style.containerText}>
                 <h3><u>Specie</u>: {character.species}</h3>
                 <h3><u>Gender</u>: {character.gender}</h3>
-                <h3><u>Origin</u>: {character.origin?.name}</h3>
+                <h3><u>Origin</u>: {character.origin}</h3>
                 <h3><u>Location</u>: {character.location?.name}</h3>
               </div>
           </div>
@@ -80,6 +82,7 @@ const Detail = () => {
         </div>
       </div>
   </div>
+    </div>
   )
 }
 

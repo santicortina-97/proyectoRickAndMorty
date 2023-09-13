@@ -25,7 +25,7 @@ const Nav = (props) => {
 
     const location = useLocation()
 
-    if(location.pathname === `/` || location.pathname === `/favorites` || location.pathname === `/about` || location.pathname === `/Detail/1`){
+    if(location.pathname === `/` || location.pathname === `/favorites` || location.pathname === `/about` || location.pathname.startsWith('/Detail')){ //starwith oculta el nav en la url que empieza por /Detail/
         return null
     }
 

@@ -5,7 +5,7 @@ import { filterCards, orderCards } from '../../redux/actions'
 import Cards from '../../components/Cards/Cards'
 import style from "./Favorites.module.css"
 
-const Favorites = (/* {favorites} */) => {
+const Favorites = () => {
     const dispatch = useDispatch();
     //Recibe un callBack, el cual tiene al estado (reducer) y de ese estado nos quedamos con (en este caso myFavorites)
     const favorites = useSelector((state) => state.myFavorites)
@@ -43,7 +43,7 @@ const Favorites = (/* {favorites} */) => {
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Genderless">Genderless</option>
-                <option value="unknown">unknown</option>
+                <option value="unknown">Unknown</option>
             </select>
             </div>
             <h1>Favorites</h1>
