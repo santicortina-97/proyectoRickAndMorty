@@ -106,14 +106,18 @@
 
 .containerDiv1{
     display: flex;
-    justify-content: start;
-    border: 2px solid black;
+    justify-content: space-between;
+    align-items: center;
+/*     border: 2px solid black; */
 }
 
 .logOut{
     display: flex;
     justify-content: start;
+    align-items: center;
 }
+
+
 
 
 .containerDiv2{

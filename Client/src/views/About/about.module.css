@@ -71,10 +71,16 @@
 }
 
 .image{
+/*     width: 300px;
+    height: 300px;
+    border-radius: 20px; */
     width: 300px;
     height: 300px;
     border-radius: 20px;
+    object-fit: cover;
+    image-rendering: auto;
 }
+
 .arrow{
     background: none;
     cursor: pointer;

@@ -13,7 +13,7 @@ import style from "./Card.module.css"
 export default function Card(props) {
    const dispatch = useDispatch()
    const favorites = useSelector((state) => state.myFavorites)
-   const {character, onClose/* , addFav, removeFav, favorites */} = props
+   const {character, onClose} = props
    const [isfav, setIsfav] = useState(false)
    const location = useLocation()
 
@@ -64,29 +64,6 @@ export default function Card(props) {
 
    );
 }
-
-//!REDUX
-
-
-/* export const mapDispatchToProps = (dispatch) =>{
-   return{
-      addFav:(character)=> {
-         dispatch(addFav(character))
-      },
-      removeFav: (id) => {
-         dispatch(removeFav(id))
-      }
-   }
-}
-
-export const mapStateToProps = (state) =>{
-   return{
-      favorites: state.myFavorites
-   }
-}
-
-export default connect (mapStateToProps, mapDispatchToProps)(Card) */
-
 
 
 
