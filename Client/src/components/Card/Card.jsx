@@ -4,23 +4,19 @@ import { Link } from "react-router-dom";
 import { addFav, removeFav } from "../../redux/actions";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import style from "./Card.module.css"
 
 
 
 
-function Card(props) {
-   const {character, onClose, addFav, removeFav, favorites} = props
+export default function Card(props) {
+   const dispatch = useDispatch()
+   const favorites = useSelector((state) => state.myFavorites)
+   const {character, onClose/* , addFav, removeFav, favorites */} = props
    const [isfav, setIsfav] = useState(false)
    const location = useLocation()
 
-/*    const [closeBtn, setCloseBtn] = useState(false)
-   useEffect(() =>{
-      if(!onClose){
-         setCloseBtn(false)
-      }
-   }, []) */
 
 
    useEffect(() => {
@@ -34,10 +30,10 @@ function Card(props) {
    function handleFavorite(character) {
       if (isfav === true) {
          setIsfav(false)
-         removeFav(character.id)
+         dispatch(removeFav(character.id))
       }else{
          setIsfav(true)
-         addFav(character, onClose)
+         dispatch(addFav(character, onClose))
       }
    }
    
@@ -72,7 +68,7 @@ function Card(props) {
 //!REDUX
 
 
-export const mapDispatchToProps = (dispatch) =>{
+/* export const mapDispatchToProps = (dispatch) =>{
    return{
       addFav:(character)=> {
          dispatch(addFav(character))
@@ -89,7 +85,7 @@ export const mapStateToProps = (state) =>{
    }
 }
 
-export default connect (mapStateToProps, mapDispatchToProps)(Card)
+export default connect (mapStateToProps, mapDispatchToProps)(Card) */
 
 
 
