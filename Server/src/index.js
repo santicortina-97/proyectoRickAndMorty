@@ -4,7 +4,6 @@ const PORT = 3001;
 const morgan = require("morgan");
 const router = require("./routes/index");
 const {conn} = require("./DB_connection");
-/* const {getCharById} = require("./controllers/getCharById"); */
 
 server.use(express.json())
 server.use(morgan("dev"))
@@ -25,11 +24,8 @@ server.use((req, res, next) => {
 
 server.use("/rickandmorty", router)
 
-/* server.get('/:id',(req,res)=>{
-    getCharById(req, res);
-}) */
-conn.sync({force: true})
 
     server.listen(PORT, () => {
+        conn.sync({force: true})
         console.log(`Server raised in port: ${PORT}`);
     });
