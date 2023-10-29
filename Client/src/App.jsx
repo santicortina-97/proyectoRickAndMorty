@@ -1,7 +1,6 @@
 import React from 'react'
 import Cards from './components/Cards/Cards';
 import Nav from './components/Nav/Nav';
-import Form from './components/Form/Form';
 
 import { useState, useEffect } from 'react'
 import axios from "axios";
@@ -12,43 +11,12 @@ import { useNavigate } from 'react-router-dom';
 import "./App.css"
 import About from './views/About/About';
 import Detail from './components/Detail/Detail';
-import ErrorPage from './views/Error/ErrorPage';
 import Favorites from './views/Favorites/Favorites';
-
+import Landing from './views/Landing/Landing';
 
 
 
 export const App = () => {
-
-    let navigate= useNavigate()
-    const [access, setAccess] = useState(false)
-/*     let EMAIL = "santicortina@hotmail.com";
-    let PASSWORD = "santi97"; */
-
-    async function login(userData){
-        try {
-            const {email, password} = userData;
-            const URL = 'http://localhost:3001/rickandmorty/login/';
-            const {data} = await axios(URL + `?email=${email}&password=${password}`)
-            const { access } = data
-            setAccess(data);
-            access && navigate("/home")
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-
-
-
-
-    useEffect(() => {
-        !access && navigate('/');
-    }, [access]);
-
-    function logOut(){
-        setAccess(false)
-    }
 
     const [characters, setCharacters] = useState([])
 
@@ -122,14 +90,13 @@ export const App = () => {
 
     return (
         <div className='App'>
-            <Nav onSearch={onSearch} randomize={randomHandler} clear={clear} logOut={logOut}/>
+            <Nav onSearch={onSearch} randomize={randomHandler} clear={clear}/>
             <Routes>
-                <Route path='/' element={<Form login={login}/>}/>
+                <Route path='/' element={<Landing/>}/>
                 <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/detail/:id" element={<Detail/>}/>
                 <Route path="/favorites" element={<Favorites onClose={onClose}/>}/>
-                <Route path="*" element={<ErrorPage/>}/>
             </Routes>
         </div>
     )

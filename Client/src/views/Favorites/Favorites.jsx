@@ -54,13 +54,3 @@ const Favorites = () => {
 }
 
 export default Favorites
-
-/* const mapStateToProps = (state) =>{
-    return{
-        favorites: state.myFavorites
-    }
-}
-
-export default connect(mapStateToProps, null)(Favorites) */
-
-

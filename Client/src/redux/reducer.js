@@ -9,13 +9,6 @@ const initialState = {
 export default function rootReducer(state = initialState, action){
     let ordenados;
     switch (action.type) {
-/*         case ADD_FAV:
-            return{
-                ...state,
-                myFavorites: [...state.myFavorites, action.payload],
-                //Copia del estado para no modificar el original
-                allCharacters: [...state.myFavorites, action.payload]
-            } */
             case ADD_FAV:
                 return { 
                     ...state, 
@@ -24,10 +17,6 @@ export default function rootReducer(state = initialState, action){
                 };
 
         case REMOVE_FAV:
-/*             return{
-                ...state,
-                myFavorites: state.myFavorites.filter(characters => characters.id !== Number(action.payload))
-            } */
             return { 
                 ...state, 
                 myFavorites: action.payload,

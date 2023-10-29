@@ -3,22 +3,11 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-/* import "./Detail.css" */
 import style from "./Detail.module.css"
 
 const Detail = () => {
   const {id} = useParams()
   const [character, setCharacter] = useState({})
-
-  useEffect(() => {
-    document.body.style.backgroundImage = `url("https://w.forfun.com/fetch/03/03fdb791c0c8753db54348da091ba79b.jpeg")`;
-
-    return() =>{
-      document.body.style.backgroundImage = null
-    }
-  }, []);
-
-
 
 
   useEffect(() => {

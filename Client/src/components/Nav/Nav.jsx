@@ -1,9 +1,6 @@
 import SearchBar from '../SearchBar/SearchBar'
 import { useState } from 'react'
 import { NavLink, useLocation, useParams } from 'react-router-dom'
-/* import { NavLink } from 'react-router-dom'
-import { useLocation } from 'react-router-dom' */
-/* import "./Nav.css" */
 import style from "./nav.module.css"
 
 
@@ -11,8 +8,7 @@ import style from "./nav.module.css"
 
 const Nav = (props) => {
     const {onSearch, randomize, clear,logOut} = props
-/*     const {id} = useParams()
-    console.log(id) */
+
     //Menu
     const [menu, setMenu] = useState(false)
 
@@ -32,9 +28,7 @@ const Nav = (props) => {
     return (
 
         <div className={style.container}>
-{/*         <div className={style.containerDiv1}> */}
             <div className={style.logOut}>
-            <button onClick={logOut} className={style.boton}>Log Out</button>
             </div>
             
             <div className={style.dropdown}>
@@ -47,7 +41,6 @@ const Nav = (props) => {
                 </div>
                 )}
             </div>
-{/*         </div> */}
             {location.pathname === "/home" && (
         <div className={style.containerDiv2}>
             <SearchBar onSearch={onSearch}/>
@@ -55,9 +48,6 @@ const Nav = (props) => {
             <button onClick={clear} className={style.botonCard}>Clear</button>
         </div>
             )}
-{/* {(location.pathname === "/about" || location.pathname === "/favorites") && (
-    <button>Back</button>
-)} */}
 
     </div>
     )

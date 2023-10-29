@@ -29,7 +29,6 @@
 }
 
 .containerText{
-/*     text-align: left; */
     text-align: center;
 }
 
@@ -53,18 +52,8 @@
     border-radius: 20px;
     font-size: xx-large;
     color: white;
-/*     text-shadow: 5px 5px 5px rgba(165,85,236,1); */
     text-shadow: #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
 }
-/* .neon::before, .neon::after{
-    content: attr(data-text);
-    color: white;
-    filter: blur(0.02em);
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}  */
 
 .id{
     text-align: right;
